@@ -1,1 +1,1 @@
-ls -tup | tr "\n" ","
+ls -tup | paste -sd "," -
