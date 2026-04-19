@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1 | sed  '1d' | awk 'NR % 2 == 0'
+ls -1 | sed '1d' | awk 'NR % 2 == 0'
