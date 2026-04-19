@@ -1,1 +1,1 @@
-find . ! -path '*/.*' \( -type f -o -type d \) ! -name '.' | wc -l
+find . ! -path '*/.*' \( -type f -o -type d \)  | wc -l
