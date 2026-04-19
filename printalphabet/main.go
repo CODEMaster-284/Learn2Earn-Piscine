@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import "github.com/01-edu/z01"
 
 func main() {
-	fmt.Println("a\nb\nc\nd\ne\nf\ng\nh\ni\nj\nk\nl\nm\nn\no\np\nq\nr\ns\nt\nu\nv\nw\nx\ny\nz")
+	for ch := 'a'; ch <= 'z'; ch++ {
+		z01.PrintRune(ch)
+		z01.PrintRune('\n')
+	}
 }
