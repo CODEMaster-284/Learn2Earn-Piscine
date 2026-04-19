@@ -1,2 +1,2 @@
 #! /biin/bash
-ls -1 | sed -n 'n;p'
+ls -1 | sed  '1d' | awk 'NR % 2 == 0'
