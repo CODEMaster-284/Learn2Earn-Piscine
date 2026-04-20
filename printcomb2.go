@@ -1,19 +1,28 @@
-package piscine
+package main
 
 import "github.com/01-edu/z01"
 
-func PrintComb2() {
-	for first := 10; first <= 98; first++ {
-		for second := first + 1; second <= 99; second++ {
-			z01.PrintRune(rune('0' + first/10))
-			z01.PrintRune(rune('0' + first%10))
-			z01.PrintRune(' ')
-			z01.PrintRune(rune('0' + second/10))
-			z01.PrintRune(rune('0' + second%10))
+func main() {
+	for a := '0'; a <= '9'; a++ {
+		for b := '0'; b <= '9'; b++ {
+			for c := a; c <= '9'; c++ {
+				start := '0'
+				if c == a {
+					start = b + 1
+				}
+				for d := start; d <= '9'; d++ {
+					z01.PrintRune(a)
+					z01.PrintRune(b)
+					z01.PrintRune(' ')
+					z01.PrintRune(c)
+					z01.PrintRune(d)
 
-			if first != 98 || second != 99 {
-				z01.PrintRune(',')
-				z01.PrintRune(' ')
+					if !(a == '9' && b == '8' && c == '9' && d == '9') {
+						z01.PrintRune(',')
+						z01.PrintRune(' ')
+
+					}
+				}
 			}
 		}
 	}
