@@ -9,6 +9,7 @@ func PrintCombN(n int) {
 
 	comb := make([]int, n)
 	printComb(comb, 0, 0, n)
+	z01.PrintRune('\n')
 }
 
 func printComb(comb []int, index, start, n int) {
@@ -28,5 +29,4 @@ func printComb(comb []int, index, start, n int) {
 		comb[index] = i
 		printComb(comb, index+1, i+1, n)
 	}
-	z01.PrintRune(',')
 }
