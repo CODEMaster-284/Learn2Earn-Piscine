@@ -16,7 +16,7 @@ func Atoi(s string) int {
 		start = 1
 	}
 
-	if start == lens(s) {
+	if start == len(s) {
 		return 0
 	}
 
