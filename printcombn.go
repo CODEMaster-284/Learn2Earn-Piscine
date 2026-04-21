@@ -28,4 +28,5 @@ func printComb(comb []int, index, start, n int) {
 		comb[index] = i
 		printComb(comb, index+1, i+1, n)
 	}
+	z01.PrintRune(',')
 }
