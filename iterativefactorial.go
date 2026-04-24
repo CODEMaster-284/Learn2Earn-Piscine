@@ -1,6 +1,5 @@
-package main
+package piscine
 
-import "fmt"
 
 func IterativeFactorial(nb int) int {
 	if nb < 0 {
@@ -20,6 +19,4 @@ func IterativeFactorial(nb int) int {
 	return result
 }
 
-func main() {
-	fmt.Print(IterativeFactorial(4))
-}
+
