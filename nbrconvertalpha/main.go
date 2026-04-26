@@ -11,8 +11,11 @@ func main() {
 	upper := false
 	start := 0
 
-	// Check for --upper flag
-	if len(args) > 0 && args[0] == "--upper" {
+	if len(args) == 0 {
+		return
+	}
+
+	if args[0] == "--upper" {
 		upper = true
 		start = 1
 	}
@@ -21,13 +24,11 @@ func main() {
 		n := atoi(args[i])
 
 		if n >= 1 && n <= 26 {
-			var ch rune
 			if upper {
-				ch = rune('A' + n - 1)
+				z01.PrintRune(rune('A' + n - 1))
 			} else {
-				ch = rune('a' + n - 1)
+				z01.PrintRune(rune('a' + n - 1))
 			}
-			z01.PrintRune(ch)
 		} else {
 			z01.PrintRune(' ')
 		}
@@ -36,9 +37,12 @@ func main() {
 	z01.PrintRune('\n')
 }
 
-// Convert string to int (returns 0 if invalid)
 func atoi(s string) int {
 	n := 0
+
+	if s == "" {
+		return 0
+	}
 
 	for _, ch := range s {
 		if ch < '0' || ch > '9' {
