@@ -9,7 +9,7 @@ import (
 func main() {
 	args := os.Args[1:]
 
-	if len(args) == 0 || args[0] == "-h" || args[0] == "--help" {
+	if len(args) == 0 || hasHelp(args) {
 		printHelp()
 		return
 	}
@@ -30,22 +30,23 @@ func main() {
 		}
 	}
 
-	result := mainStr
+	result := mainStr + insert
 
 	if order {
 		result = sortString(result)
 	}
 
-	if insert != "" {
-		result = result + insert
-	}
+	printStr(result)
+	z01.PrintRune('\n')
+}
 
-	for _, ch := range result {
-		z01.PrintRune(ch)
+func hasHelp(args []string) bool {
+	for _, arg := range args {
+		if arg == "-h" || arg == "--help" {
+			return true
+		}
 	}
-	if result != "" {
-		z01.PrintRune('\n')
-	}
+	return false
 }
 
 func printHelp() {
