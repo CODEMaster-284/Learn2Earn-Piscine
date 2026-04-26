@@ -1,4 +1,4 @@
-package pisicine
+package piscine
 
 func LastRune(s string) rune {
 	runes := []rune(s)
