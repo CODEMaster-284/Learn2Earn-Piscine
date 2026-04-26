@@ -7,19 +7,17 @@ import (
 )
 
 func main() {
-	arg := os.Args[0]
+	name := os.Args[0]
 	start := 0
 
-	// Find last '/'
-	for i := 0; i < len(arg); i++ {
-		if arg[i] == '/' {
+	for i, ch := range name {
+		if ch == '/' {
 			start = i + 1
 		}
 	}
 
-	// Print from last '/' to end
-	for i := start; i < len(arg); i++ {
-		z01.PrintRune(rune(arg[i]))
+	for _, ch := range name[start:] {
+		z01.PrintRune(ch)
 	}
 
 	z01.PrintRune('\n')
