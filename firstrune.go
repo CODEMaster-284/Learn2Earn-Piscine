@@ -1,4 +1,4 @@
-package piscine 
+package piscine
 
 func FirstRune(s string) rune {
 	if len(s) == 0 {
