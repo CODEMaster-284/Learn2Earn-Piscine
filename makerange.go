@@ -5,9 +5,11 @@ func AppendRange(min, max int) []int {
 		return nil
 	}
 
-	var result []int
-	for i := min; i < max; i++ {
-		result = append(result, i)
+	size := max - min
+	result := make([]int, size)
+
+	for i := 0; i < size; i++ {
+		result[i] = min + i
 	}
 
 	return result
