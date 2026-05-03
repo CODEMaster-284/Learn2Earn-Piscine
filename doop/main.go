@@ -3,8 +3,8 @@ package main
 import "os"
 
 const (
-	Max = int64(9223372036854775807)
-	Min = -Max - 1
+	Max int64 = 9223372036854775807
+	Min int64 = -9223372036854775807 - 1
 )
 
 func printStr(s string) {
@@ -52,19 +52,27 @@ func atoi(s string) (int64, bool) {
 			return 0, false
 		}
 
-		digit := int64(s[i] - '0')
+		d := int64(s[i] - '0')
 
-		if sign == 1 && n > (Max-digit)/10 {
-			return 0, false
-		}
-		if sign == -1 && n > ((Max+1)-digit)/10 {
-			return 0, false
+		if sign == 1 {
+			if n > (Max-d)/10 {
+				return 0, false
+			}
+		} else {
+			if n > ((Max - d) / 10) {
+				if !(n == Max/10 && d == 8) {
+					return 0, false
+				}
+			}
 		}
 
-		n = n*10 + digit
+		n = n*10 + d
 	}
 
-	return n * sign, true
+	if sign == -1 {
+		return -n, true
+	}
+	return n, true
 }
 
 func main() {
@@ -80,19 +88,19 @@ func main() {
 		return
 	}
 
-	var result int64
+	var r int64
 
 	switch op {
 	case "+":
 		if (b > 0 && a > Max-b) || (b < 0 && a < Min-b) {
 			return
 		}
-		result = a + b
+		r = a + b
 	case "-":
 		if (b < 0 && a > Max+b) || (b > 0 && a < Min+b) {
 			return
 		}
-		result = a - b
+		r = a - b
 	case "*":
 		if a != 0 && b != 0 {
 			if a == Min && b == -1 {
@@ -101,11 +109,13 @@ func main() {
 			if b == Min && a == -1 {
 				return
 			}
-			if a*b/b != a {
+			r = a * b
+			if r/b != a {
 				return
 			}
+		} else {
+			r = 0
 		}
-		result = a * b
 	case "/":
 		if b == 0 {
 			printStr("No division by 0\n")
@@ -114,17 +124,17 @@ func main() {
 		if a == Min && b == -1 {
 			return
 		}
-		result = a / b
+		r = a / b
 	case "%":
 		if b == 0 {
 			printStr("No modulo by 0\n")
 			return
 		}
-		result = a % b
+		r = a % b
 	default:
 		return
 	}
 
-	printNbr(result)
+	printNbr(r)
 	printStr("\n")
 }
