@@ -1,15 +1,23 @@
 package main
 
 import (
-	"fmt"
 	"io"
 	"os"
+
+	"github.com/01-edu/z01"
 )
+
+func printError(err error) {
+	msg := "ERROR: " + err.Error() + "\n"
+	for _, r := range msg {
+		z01.PrintRune(r)
+	}
+}
 
 func main() {
 	args := os.Args[1:]
 
-	// If no arguments → read from stdin
+	// No arguments → stdin
 	if len(args) == 0 {
 		io.Copy(os.Stdout, os.Stdin)
 		return
@@ -17,10 +25,10 @@ func main() {
 
 	hasError := false
 
-	for _, fileName := range args {
-		file, err := os.Open(fileName)
+	for _, name := range args {
+		file, err := os.Open(name)
 		if err != nil {
-			fmt.Printf("ERROR: %v\n", err)
+			printError(err)
 			hasError = true
 			continue
 		}
