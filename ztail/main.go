@@ -16,28 +16,24 @@ func atoi(s string) int {
 }
 
 func main() {
-	if len(os.Args) < 4 || os.Args[1] != "-c" {
-		os.Exit(1)
-	}
-
 	n := atoi(os.Args[2])
 	files := os.Args[3:]
 	hasError := false
+	printed := false
 
-	for i, name := range files {
-		if len(files) > 1 && i > 0 {
-			fmt.Printf("\n")
-		}
-
-		if len(files) > 1 {
-			fmt.Printf("==> %s <==\n", name)
-		}
-
+	for _, name := range files {
 		data, err := os.ReadFile(name)
 		if err != nil {
 			fmt.Printf("%v\n", err)
 			hasError = true
 			continue
+		}
+
+		if len(files) > 1 {
+			if printed {
+				fmt.Printf("\n")
+			}
+			fmt.Printf("==> %s <==\n", name)
 		}
 
 		start := len(data) - n
@@ -46,6 +42,7 @@ func main() {
 		}
 
 		fmt.Printf("%s", data[start:])
+		printed = true
 	}
 
 	if hasError {
