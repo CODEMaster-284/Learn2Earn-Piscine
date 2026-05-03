@@ -1,15 +1,9 @@
 package main
 
-import (
-	"os"
-
-	"github.com/01-edu/z01"
-)
+import "os"
 
 func printStr(s string) {
-	for _, r := range s {
-		z01.PrintRune(r)
-	}
+	os.Stdout.Write([]byte(s))
 }
 
 func printNbr(n int) {
@@ -18,13 +12,13 @@ func printNbr(n int) {
 		return
 	}
 	if n < 0 {
-		z01.PrintRune('-')
+		printStr("-")
 		n = -n
 	}
 	if n >= 10 {
 		printNbr(n / 10)
 	}
-	z01.PrintRune(rune(n%10 + '0'))
+	os.Stdout.Write([]byte{byte(n%10 + '0')})
 }
 
 func atoi(s string) (int, bool) {
@@ -79,15 +73,13 @@ func main() {
 		printNbr(a * b)
 	case "/":
 		if b == 0 {
-			printStr("No division by 0")
-			z01.PrintRune('\n')
+			printStr("No division by 0\n")
 			return
 		}
 		printNbr(a / b)
 	case "%":
 		if b == 0 {
-			printStr("No modulo by 0")
-			z01.PrintRune('\n')
+			printStr("No modulo by 0\n")
 			return
 		}
 		printNbr(a % b)
@@ -95,5 +87,5 @@ func main() {
 		return
 	}
 
-	z01.PrintRune('\n')
+	printStr("\n")
 }
