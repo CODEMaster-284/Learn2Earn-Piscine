@@ -12,27 +12,25 @@ func setPoint(ptr *point) {
 	ptr.y = 21
 }
 
-func printStr(s string) {
-	for _, r := range s {
-		z01.PrintRune(r)
-	}
-}
-
-func printNbr(n int) {
-	if n >= 10 {
-		printNbr(n / 10)
-	}
-	z01.PrintRune(rune(n%10 + '0'))
-}
-
 func main() {
 	points := &point{}
 
 	setPoint(points)
 
-	printStr("x = ")
-	printNbr(points.x)
-	printStr(", y = ")
-	printNbr(points.y)
+	// Print "x = 42, y = 21"
+	z01.PrintRune('x')
+	z01.PrintRune(' ')
+	z01.PrintRune('=')
+	z01.PrintRune(' ')
+	z01.PrintRune('4')
+	z01.PrintRune('2')
+	z01.PrintRune(',')
+	z01.PrintRune(' ')
+	z01.PrintRune('y')
+	z01.PrintRune(' ')
+	z01.PrintRune('=')
+	z01.PrintRune(' ')
+	z01.PrintRune('2')
+	z01.PrintRune('1')
 	z01.PrintRune('\n')
 }
