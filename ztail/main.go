@@ -19,9 +19,8 @@ func main() {
 	n := atoi(os.Args[2])
 	files := os.Args[3:]
 	hasError := false
-	printed := false
 
-	for _, name := range files {
+	for i, name := range files {
 		data, err := os.ReadFile(name)
 		if err != nil {
 			fmt.Printf("%v\n", err)
@@ -30,7 +29,7 @@ func main() {
 		}
 
 		if len(files) > 1 {
-			if printed {
+			if i > 0 {
 				fmt.Printf("\n")
 			}
 			fmt.Printf("==> %s <==\n", name)
@@ -42,7 +41,6 @@ func main() {
 		}
 
 		fmt.Printf("%s", data[start:])
-		printed = true
 	}
 
 	if hasError {
