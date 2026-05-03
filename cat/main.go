@@ -7,9 +7,8 @@ import (
 	"github.com/01-edu/z01"
 )
 
-func printError(err error) {
-	msg := "ERROR: " + err.Error() + "\n"
-	for _, r := range msg {
+func printStr(s string) {
+	for _, r := range s {
 		z01.PrintRune(r)
 	}
 }
@@ -17,27 +16,19 @@ func printError(err error) {
 func main() {
 	args := os.Args[1:]
 
-	// No arguments → stdin
 	if len(args) == 0 {
 		io.Copy(os.Stdout, os.Stdin)
 		return
 	}
 
-	hasError := false
-
 	for _, name := range args {
 		file, err := os.Open(name)
 		if err != nil {
-			printError(err)
-			hasError = true
-			continue
+			printStr("ERROR: " + err.Error() + "\n")
+			os.Exit(1)
 		}
 
 		io.Copy(os.Stdout, file)
 		file.Close()
-	}
-
-	if hasError {
-		os.Exit(1)
 	}
 }
