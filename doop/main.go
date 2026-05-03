@@ -1,9 +1,31 @@
 package main
 
 import (
-	"fmt"
 	"os"
+
+	"github.com/01-edu/z01"
 )
+
+func printStr(s string) {
+	for _, r := range s {
+		z01.PrintRune(r)
+	}
+}
+
+func printNbr(n int) {
+	if n == -2147483648 {
+		printStr("-2147483648")
+		return
+	}
+	if n < 0 {
+		z01.PrintRune('-')
+		n = -n
+	}
+	if n >= 10 {
+		printNbr(n / 10)
+	}
+	z01.PrintRune(rune(n%10 + '0'))
+}
 
 func atoi(s string) (int, bool) {
 	n := 0
@@ -50,24 +72,28 @@ func main() {
 
 	switch op {
 	case "+":
-		fmt.Println(a + b)
+		printNbr(a + b)
 	case "-":
-		fmt.Println(a - b)
+		printNbr(a - b)
 	case "*":
-		fmt.Println(a * b)
+		printNbr(a * b)
 	case "/":
 		if b == 0 {
-			fmt.Println("No division by 0")
+			printStr("No division by 0")
+			z01.PrintRune('\n')
 			return
 		}
-		fmt.Println(a / b)
+		printNbr(a / b)
 	case "%":
 		if b == 0 {
-			fmt.Println("No modulo by 0")
+			printStr("No modulo by 0")
+			z01.PrintRune('\n')
 			return
 		}
-		fmt.Println(a % b)
+		printNbr(a % b)
 	default:
 		return
 	}
+
+	z01.PrintRune('\n')
 }
