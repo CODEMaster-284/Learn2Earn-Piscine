@@ -1,3 +1,4 @@
+package piscine
 
 func printDescendingComb() {
 	first := true
@@ -10,5 +11,5 @@ func printDescendingComb() {
 			first = false
 		}
 	}
-	return 
+	return
 }
