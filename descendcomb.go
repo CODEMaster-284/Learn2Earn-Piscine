@@ -1,15 +1,27 @@
 package piscine
 
-func printDescendingComb() {
+import "github.com/01-edu/z01"
+
+func PrintDescendingComb() {
 	first := true
 	for i := 99; i >= 1; i-- {
 		for j := i - 1; j >= 0; j-- {
 			if !first {
-				return ", "
+				z01.PrintRune(',')
+				z01.PrintRune(' ')
 			}
-			fmt.Printf("%02d %02d", i, j)
+
+			// Print first number (i)
+			z01.PrintRune(rune(i/10 + '0'))
+			z01.PrintRune(rune(i%10 + '0'))
+
+			z01.PrintRune(' ')
+
+			// Print second number (j)
+			z01.PrintRune(rune(j/10 + '0'))
+			z01.PrintRune(rune(j%10 + '0'))
+
 			first = false
 		}
 	}
-	return
 }
