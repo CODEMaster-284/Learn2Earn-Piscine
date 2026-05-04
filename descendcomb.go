@@ -11,13 +11,11 @@ func DescendComb() {
 				z01.PrintRune(' ')
 			}
 
-			// Print first number (i)
 			z01.PrintRune(rune(i/10 + '0'))
 			z01.PrintRune(rune(i%10 + '0'))
 
 			z01.PrintRune(' ')
 
-			// Print second number (j)
 			z01.PrintRune(rune(j/10 + '0'))
 			z01.PrintRune(rune(j%10 + '0'))
 
