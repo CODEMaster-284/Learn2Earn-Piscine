@@ -5,11 +5,18 @@ func Join(strs []string, sep string) string {
 		return ""
 	}
 
-	result := strs[0]
-
-	for i := 1; i < len(strs); i++ {
-		result += sep + strs[i]
+	total := len(sep) * (len(strs) - 1)
+	for _, str := range strs {
+		total += len(str)
 	}
 
-	return result
+	result := make([]byte, 0, total)
+	for i, str := range strs {
+		if i > 0 {
+			result = append(result, sep...)
+		}
+		result = append(result, str...)
+	}
+
+	return string(result)
 }
