@@ -1,11 +1,16 @@
 package piscine
 
-import "sort"
-
 func Abort(a, b, c, d, e int) int {
-	nums := []int{a, b, c, d, e}
+	arr := []int{a, b, c, d, e}
+	n := len(arr)
 
-	sort.Ints(nums)
-
-	return nums[2]
+	for i := 0; i < n; i++ {
+		for j := i + 1; j < n; j++ {
+			if arr[i] > arr[j] {
+				// Swap
+				arr[i], arr[j] = arr[j], arr[i]
+			}
+		}
+	}
+	return arr[2]
 }
