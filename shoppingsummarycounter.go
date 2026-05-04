@@ -19,5 +19,5 @@ func ShoppingSummaryCounter(str string) map[string]int {
 		summary[word]++
 	}
 
-	return summay
+	return summary
 }
