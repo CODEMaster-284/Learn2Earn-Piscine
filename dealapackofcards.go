@@ -1,4 +1,4 @@
-package main
+package piscine
 
 import (
 	"fmt"
@@ -14,9 +14,4 @@ func DealAPackOfCards(deck []int) {
 	fmt.Printf("Player 2: %d, %d, %d\n", p2[0], p2[1], p2[2])
 	fmt.Printf("Player 3: %d, %d, %d\n", p3[0], p3[1], p3[2])
 	fmt.Printf("Player 4: %d, %d, %d\n", p4[0], p4[1], p4[2])
-}
-
-func main() {
-	deck := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
-	DealAPackOfCards(deck)
 }
