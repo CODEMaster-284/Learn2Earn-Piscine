@@ -14,6 +14,10 @@ func LoafOfBread(str string) string {
 		}
 	}
 
+	if letters == 0 {
+		return "\n"
+	}
+
 	if letters < 5 {
 		return "Invalid Output\n"
 	}
