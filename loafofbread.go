@@ -1,6 +1,10 @@
 package piscine
 
 func LoafOfBread(str string) string {
+	if str == "" {
+		return "\n"
+	}
+
 	runes := []rune(str)
 	letters := 0
 
