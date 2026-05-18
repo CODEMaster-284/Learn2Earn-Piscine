@@ -1,5 +1,11 @@
 # Piscine Go Repo Guide
 
+> Disclaimer:
+> This repository is for learning and personal practice only. It should not be
+> used during checkpoints, recoding sessions, exams, or any other graded or
+> evaluated activity during the piscine. If you choose to misuse it, you are
+> solely responsible for any consequences.
+
 This repository is organized to help you move through the Learn2Earn / Piscine
 Go work in a cleaner way. Instead of keeping everything flat in one directory,
 the exercises are grouped into quest folders and a few standalone mini-project

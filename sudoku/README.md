@@ -1,5 +1,11 @@
 # Sudoku
 
+> [!WARNING]
+> This repository content is for learning and personal practice only.
+> Do not use it during checkpoints, recoding sessions, exams, or any other
+> graded or evaluated activity during the piscine.
+> If you choose to misuse it, you alone are responsible for the consequences.
+
 This folder contains a Sudoku solver written in Go. The program expects a
 9-row puzzle from the command line, validates the starting grid, solves it by
 backtracking, and prints the finished board only when there is exactly one

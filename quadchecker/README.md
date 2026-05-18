@@ -1,5 +1,11 @@
 # Quad Checker
 
+> [!WARNING]
+> This repository content is for learning and personal practice only.
+> Do not use it during checkpoints, recoding sessions, exams, or any other
+> graded or evaluated activity during the piscine.
+> If you choose to misuse it, you alone are responsible for the consequences.
+
 This folder contains a standalone quad recognizer. Instead of drawing one
 pattern directly, it reads a shape from standard input, figures out its width
 and height, regenerates all known quad patterns for that size, and reports
