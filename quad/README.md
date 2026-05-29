@@ -12,14 +12,22 @@ separate from command-line parsing.
 
 ## Video walkthrough
 
-You can watch the quad explanation here:
+You can watch the quad explanations here:
+
+### `QuadA`
 
 [https://youtu.be/wJjQzgq_UY4](https://youtu.be/wJjQzgq_UY4)
 
-[![Watch the quad walkthrough](https://img.youtube.com/vi/wJjQzgq_UY4/hqdefault.jpg)](https://youtu.be/wJjQzgq_UY4)
+[![Watch the QuadA walkthrough](https://img.youtube.com/vi/wJjQzgq_UY4/hqdefault.jpg)](https://youtu.be/wJjQzgq_UY4)
+
+### `QuadB`, `QuadC`, `QuadD`, and `QuadE`
+
+[https://youtu.be/AM2pkvNdR5c](https://youtu.be/AM2pkvNdR5c)
+
+[![Watch the QuadB to QuadE walkthrough](https://img.youtube.com/vi/AM2pkvNdR5c/hqdefault.jpg)](https://youtu.be/AM2pkvNdR5c)
 
 Most Markdown viewers do not support inline YouTube playback, but the preview
-image above opens the video with one click.
+images above open each video with one click.
 
 ## Structure
 
